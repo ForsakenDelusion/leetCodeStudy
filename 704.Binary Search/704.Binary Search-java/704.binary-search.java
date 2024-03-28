@@ -11,10 +11,9 @@
 // @lc code=start
 class Solution {
     public int search(int[] nums, int target) {
-        if (target < nums[0] || target > nums[nums.length - 1]){
+        if (target < nums[0] || target > nums[nums.length - 1]) {
             return -1;
         }
-            
 
         int left = 0, right = nums.length - 1;
 
@@ -34,15 +33,9 @@ class Solution {
 
         return -1;
     }
-    
-}
-// @lc code=end
 
+}
 
 // @lcpr case=start
-     [-1,0,3,5,9,12]\n9\n
+// [1,3,5,6,8,65]\n3\n
 // @lcpr case=end
- 
-
-
- 
