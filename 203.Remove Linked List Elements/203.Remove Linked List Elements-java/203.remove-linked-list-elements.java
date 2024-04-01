@@ -21,23 +21,18 @@
  */
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-        ListNode sentinal = new ListNode(205, head);
-        while (sentinal.next.next != null) {
-            if (sentinal.next.val == val) {
-                sentinal.next = sentinal.next.next;
+        ListNode sentinel = new ListNode(205, head);
+        sentinel.next = head;
+        ListNode cur = sentinel;
+        while (cur.next != null) {
+            if (cur.next.val == val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
             }
-            sentinal = sentinal.next;
         }
+        return sentinel.next;
 
-        if (sentinal.next.next == null && sentinal.next.val == val) {
-            sentinal.next = null;
-        }
-
-        if (sentinal.next == null) {
-            return head
-        }
-
-        return head;
     }
 }
 // @lc code=end
