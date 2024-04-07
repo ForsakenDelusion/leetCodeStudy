@@ -25,8 +25,30 @@ class Solution {
         ListNode sentinel;
         ListNode nextNode;
         ListNode curNode;
+        ListNode tempHead;
+        ListNode temp;
+        ListNode tempTail;
+
+        sentinel = new ListNode(205, head);
+        curNode = sentinel;
+        temp = head.next;
+        nextNode = head;
+
+        while (temp != null && temp.next != null) {
+            curNode.next = temp;
+            curNode = temp;
+            curNode.next = nextNode;
+            nextNode.next = curNode.next;
+            nextNode = curNode.next;
+            temp = nextNode.next;
+            
+        }
+
+
+        
         
 
+        return sentinel.next;
     }
 }
 // @lc code=end
