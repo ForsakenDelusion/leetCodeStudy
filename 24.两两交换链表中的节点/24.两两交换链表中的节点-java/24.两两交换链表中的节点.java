@@ -23,9 +23,9 @@ class Solution {
     public ListNode swapPairs(ListNode head) {
         ListNode temp;
         ListNode tempNext;
-        ListNode sentinel = new ListNode(205,head);
+        ListNode sentinel = new ListNode(205, head);
         ListNode curNode = sentinel;
-        
+
         while (curNode.next != null && curNode.next.next != null) {
             temp = curNode.next.next;
             tempNext = curNode.next.next.next;

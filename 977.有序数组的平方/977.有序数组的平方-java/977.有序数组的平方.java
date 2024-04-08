@@ -19,8 +19,7 @@ class Solution {
             if (nums[left] * nums[left] < nums[right] * nums[right]) {
                 result[index--] = nums[right] * nums[right];
                 right -= 1;
-            }
-            else {
+            } else {
                 result[index--] = nums[left] * nums[left];
                 left += 1;
             }

@@ -27,7 +27,6 @@ class Solution {
         }
         return result;
 
-       
     }
 }
 // @lc code=end
