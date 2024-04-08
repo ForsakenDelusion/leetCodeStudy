@@ -59,7 +59,7 @@ class MyLinkedList {
 
     public void addAtIndex(int index, int val) {
         intNode curNode = sentinel;
-        if (index == size ) {
+        if (index == size) {
             addAtTail(val);
         } else if (index <= size && index >= 0) {
             if (curNode.nextNode != null) {
@@ -72,7 +72,6 @@ class MyLinkedList {
         } else if (index > size) {
             return;
         }
-        
 
     }
 

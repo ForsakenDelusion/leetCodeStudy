@@ -13,7 +13,7 @@ class Solution {
     public int[][] generateMatrix(int n) {
         int loop = 0;
         int start = 0;
-        int i, j ;
+        int i, j;
         int count = 1;
         int[][] res = new int[n][n];
         while (loop++ < n / 2) {
