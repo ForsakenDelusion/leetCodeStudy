@@ -22,7 +22,24 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
+        ListNode fastNode = head;
+        ListNode slowNode = head;
 
+        while (fastNode != null && fastNode.next != null) {
+            fastNode = fastNode.next.next;
+            slowNode = slowNode.next;
+            if (fastNode == slowNode) {
+                ListNode index1 = head;
+                ListNode index2 = fastNode;
+                while (index1 != index2) {
+                    index1 = index1.next;
+                    index2 = index2.next;
+                }
+                return index1;
+            }
+            
+        }
+        return null;
     }
 }
 // @lc code=end
