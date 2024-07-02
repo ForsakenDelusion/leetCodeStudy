@@ -35,9 +35,7 @@ class Solution {
         }
 
         lastNode.next = lastNode.next.next;
-
         return sentinel.next;
-
     }
 }
 // @lc code=end

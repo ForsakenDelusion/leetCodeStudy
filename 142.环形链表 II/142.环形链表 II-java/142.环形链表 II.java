@@ -36,8 +36,7 @@ public class Solution {
                     index2 = index2.next;
                 }
                 return index1;
-            }
-            
+            } 
         }
         return null;
     }
