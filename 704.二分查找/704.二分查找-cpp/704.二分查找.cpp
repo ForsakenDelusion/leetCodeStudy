@@ -1,8 +1,5 @@
 // @lcpr-before-debug-begin
 
-
-
-
 // @lcpr-before-debug-end
 
 /*
@@ -37,9 +34,9 @@ public:
     int search(vector<int> &nums, int target)
     {
         int left = 0;
-        int right = nums.size() - 1;
+        int right = nums.size();
         int mid = (left + right) >> 1;
-        while (left <= right)
+        while (left < right)
         {
             if (nums[mid] == target)
             {
@@ -49,7 +46,7 @@ public:
             {
                 if (nums[mid] > target)
                 {
-                    right = mid - 1;
+                    right = mid;
                     mid = (left + right) >> 1;
                 }
                 else if (nums[mid] < target)
