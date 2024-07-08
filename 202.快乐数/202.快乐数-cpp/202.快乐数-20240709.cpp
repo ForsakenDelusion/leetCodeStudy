@@ -1,8 +1,5 @@
 // @lcpr-before-debug-begin
 
-
-
-
 // @lcpr-before-debug-end
 
 /*
@@ -31,33 +28,26 @@ using namespace std;
 #include <vector>
 // @lcpr-template-end
 // @lc code=start
-class Solution
-{
+class Solution {
 public:
-    bool isHappy(int n)
-    {
-        unordered_set<int> checkSet;
-        int sum = 0;
-        while (checkSet.find(sum) == checkSet.end())
-        {
-            checkSet.insert(sum);
-            sum = 0;
-            while (n)
-            {
-                sum = (n % 10) * (n % 10);
-                n /= 10;
-            }
-            if (sum == 1)
-            {
-                return true;
-            }
-            else
-            {
-                n = sum;
-            }
-        }
-        return false;
+  bool isHappy(int n) {
+    unordered_set<int> checkSet;
+    int sum = 0;
+    while (checkSet.find(sum) == checkSet.end()) {
+      checkSet.insert(sum);
+      sum = 0;
+      while (n) {
+        sum = sum + (n % 10) * (n % 10);
+        n /= 10;
+      }
+      if (sum == 1) {
+        return true;
+      } else {
+        n = sum;
+      }
     }
+    return false;
+  }
 };
 // @lc code=end
 
