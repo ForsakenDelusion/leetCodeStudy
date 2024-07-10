@@ -41,10 +41,11 @@ public:
     }
     unordered_set<char>::iterator it = checkSet.begin();
     for (char c : ransomNote) {
-      checkSet.erase(c);
       if (checkSet.find(c) == checkSet.end()) {
         return false;
       }
+      auto it = checkSet.find(c);
+      checkSet.erase(it);
     }
     return true;
   }
