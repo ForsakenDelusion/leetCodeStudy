@@ -26,7 +26,17 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-  string reverseStr(string s, int k) {}
+  string reverseStr(string s, int k) {
+    int size = s.size();
+    for (int i = 0; i < size; i += (2 * k)) {
+      if (i + k <= size) {
+        reverse(s.begin() + i, s.begin() + i + k);
+      } else {
+        reverse(s.begin() + i, s.end());
+      }
+    }
+    return s;
+  }
 };
 // @lc code=end
 
