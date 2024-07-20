@@ -49,7 +49,8 @@ public:
   }
   vector<int> inorderTraversal(TreeNode *root) {
     vector<int> res;
-    traversal(root, res);
+    TreeNode* cur = root;
+    traversal(cur, res);
     return res;
   }
 };

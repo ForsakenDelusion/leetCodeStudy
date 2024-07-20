@@ -49,7 +49,8 @@ public:
   vector<int> postorderTraversal(TreeNode *root) {
     // 左右中
     vector<int> res;
-    traversal(root, res);
+    TreeNode *cur = root;
+    traversal(cur, res);
     return res;
   }
 };

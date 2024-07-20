@@ -1,12 +1,12 @@
 /*
- * @lc app=leetcode.cn id=144 lang=cpp
+ * @lc app=leetcode.cn id=94 lang=cpp
  * @lcpr version=30204
  *
- * [144] 二叉树的前序遍历
+ * [94] 二叉树的中序遍历
  */
 
 // @lcpr-template-start
-#include <cstddef>
+#include <fstream>
 using namespace std;
 #include <algorithm>
 #include <array>
@@ -39,18 +39,21 @@ using namespace std;
  */
 class Solution {
 public:
-  void traversal(TreeNode *cur, vector<int> &res) {
-    if (cur == NULL) {
-      return;
-    }
-    res.push_back(cur->val);
-    traversal(cur->left, res);
-    traversal(cur->right, res);
-  }
-  vector<int> preorderTraversal(TreeNode *root) {
+  vector<int> inorderTraversal(TreeNode *root) {
     vector<int> res;
+    stack<TreeNode *> st;
     TreeNode *cur = root;
-    traversal(cur, res);
+    while (cur != NULL || !st.empty()) {
+      if (cur != NULL) {
+        st.push(cur);
+        cur = cur->left;
+      } else {
+        cur = st.top();
+        st.pop();
+        res.push_back(cur->val);
+        cur = cur->right;
+      }
+    }
     return res;
   }
 };
@@ -67,14 +70,6 @@ public:
 
 // @lcpr case=start
 // [1]\n
-// @lcpr case=end
-
-// @lcpr case=start
-// [1,2]\n
-// @lcpr case=end
-
-// @lcpr case=start
-// [1,null,2]\n
 // @lcpr case=end
 
  */
