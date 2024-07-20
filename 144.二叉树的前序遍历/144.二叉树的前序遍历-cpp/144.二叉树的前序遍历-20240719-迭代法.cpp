@@ -39,18 +39,24 @@ using namespace std;
  */
 class Solution {
 public:
-  void traversal(TreeNode *cur, vector<int> &res) {
-    if (cur == NULL) {
-      return;
-    }
-    res.push_back(cur->val);
-    traversal(cur->left, res);
-    traversal(cur->right, res);
-  }
   vector<int> preorderTraversal(TreeNode *root) {
     vector<int> res;
-    TreeNode *cur = root;
-    traversal(cur, res);
+    stack<TreeNode *> st;
+    if (root == NULL) {
+      return res;
+    }
+    st.push(root);
+    while (!st.empty()) {
+      TreeNode *node = st.top();
+      st.pop();
+      res.push_back(node->val);
+      if (node->right) {
+        st.push(node->right);
+      }
+      if (node->left) {
+        st.push(node->left);
+      }
+    }
     return res;
   }
 };
