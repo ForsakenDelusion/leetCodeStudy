@@ -1,12 +1,8 @@
-// @lcpr-before-debug-begin
-
-// @lcpr-before-debug-end
-
 /*
- * @lc app=leetcode.cn id=116 lang=cpp
+ * @lc app=leetcode.cn id=117 lang=cpp
  * @lcpr version=30204
  *
- * [116] 填充每个节点的下一个右侧节点指针
+ * [117] 填充每个节点的下一个右侧节点指针 II
  */
 
 // @lcpr-template-start
@@ -80,7 +76,7 @@ public:
 
 /*
 // @lcpr case=start
-// [1,2,3,4,5,6,7]\n
+// [1,2,3,4,5,null,7]\n
 // @lcpr case=end
 
 // @lcpr case=start
