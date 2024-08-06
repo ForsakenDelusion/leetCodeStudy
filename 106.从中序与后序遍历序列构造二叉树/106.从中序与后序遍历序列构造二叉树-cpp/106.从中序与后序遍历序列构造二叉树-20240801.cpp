@@ -63,11 +63,9 @@ public:
 
     postorder.resize((postorder.size() - 1));
 
-    vector<int> leftPostorder(postorder.begin(),
-                              postorder.begin() + leftInorder.size());
+    vector<int> leftPostorder(postorder.begin(),postorder.begin() + leftInorder.size());
 
-    vector<int> rightPostorder(postorder.begin() + leftInorder.size(),
-                               postorder.end());
+    vector<int> rightPostorder(postorder.begin() + leftInorder.size(),postorder.end());
 
     root->left = traversal(leftInorder, leftPostorder);
     root->right = traversal(rightInorder, rightPostorder);
