@@ -58,8 +58,7 @@ public:
     }
 
     vector<int> leftInorder(inorder.begin(), inorder.begin() + separatePoint);
-    vector<int> rightInorder(inorder.begin() + separatePoint + 1,
-                             inorder.end());
+    vector<int> rightInorder(inorder.begin() + separatePoint + 1,inorder.end());
 
     postorder.resize((postorder.size() - 1));
 
