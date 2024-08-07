@@ -1,12 +1,8 @@
-// @lcpr-before-debug-begin
-
-// @lcpr-before-debug-end
-
 /*
- * @lc app=leetcode.cn id=654 lang=cpp
+ * @lc app=leetcode.cn id=617 lang=cpp
  * @lcpr version=30204
  *
- * [654] 最大二叉树
+ * [617] 合并二叉树
  */
 
 // @lcpr-template-start
@@ -42,46 +38,31 @@ using namespace std;
  */
 class Solution {
 public:
-  TreeNode *travesal(vector<int> &nums) {
-    TreeNode *node = new TreeNode();
-    if (nums.size() == 1) {
-      node->val = nums[0];
-      return node;
+  TreeNode *mergeTrees(TreeNode *root1, TreeNode *root2) {
+    if (!root1) {
+      return root2;
     }
-    int max = INT_MIN;
-    int maxIndex = 0;
-    for (int i = 0; i < nums.size(); i++) {
-      if (nums[i] > max) {
-        max = nums[i];
-        maxIndex = i;
-      }
-    }
-    node->val = max;
-    if (maxIndex > 0) {
-      vector<int> leftNums(nums.begin(), nums.begin() + maxIndex);
-      node->left = travesal(leftNums);
+    if (!root2) {
+      return root1;
     }
 
-    if (maxIndex < nums.size() - 1) {
-      vector<int> rightNums(nums.begin() + maxIndex + 1, nums.end());
-      node->right = travesal(rightNums);
-    }
+    root1->val += root2->val;
 
-    return node;
-  }
-  TreeNode *constructMaximumBinaryTree(vector<int> &nums) {
-    return travesal(nums);
+    root1->left = mergeTrees(root1->left, root2->left);
+    root1->right = mergeTrees(root1->right, root2->right);
+
+    return root1;
   }
 };
 // @lc code=end
 
 /*
 // @lcpr case=start
-// [3,2,1,6,0,5]\n
+// [1,3,2,5]\n[2,1,3,null,4,null,7]\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [3,2,1]\n
+// [1]\n[1,2]\n
 // @lcpr case=end
 
  */
