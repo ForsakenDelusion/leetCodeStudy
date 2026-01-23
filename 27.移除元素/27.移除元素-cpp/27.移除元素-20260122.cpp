@@ -1,15 +1,8 @@
-// @lcpr-before-debug-begin
-
-
-
-
-// @lcpr-before-debug-end
-
 /*
- * @lc app=leetcode.cn id=26 lang=cpp
+ * @lc app=leetcode.cn id=27 lang=cpp
  * @lcpr version=30204
  *
- * [26] 删除有序数组中的重复项
+ * [27] 移除元素
  */
 
 
@@ -34,23 +27,9 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
-        // 1,1,2,3,3,4,
-        int len = nums.size();
-
-        int i = 0;int j = 1;
-        int cnt = 0;
-        for(;j<len;){
-            if(nums[i] != nums[j]){
-                i++;
-                nums[i] = nums[j];
-            }
-            j++;
-            cnt++;
-        }
-
-
-        return i + 1;
+    int removeElement(vector<int>& nums, int val) {
+        int len = nums;
+        
     }
 };
 // @lc code=end
@@ -59,11 +38,11 @@ public:
 
 /*
 // @lcpr case=start
-// [1,1,2]\n
+// [3,2,2,3]\n3\n
 // @lcpr case=end
 
 // @lcpr case=start
-// [0,0,1,1,1,2,2,3,3,4]\n
+// [0,1,2,2,3,0,4,2]\n2\n
 // @lcpr case=end
 
  */
